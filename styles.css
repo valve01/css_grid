@@ -1,0 +1,13 @@
+.grid-item1 {
+	background-color: aquamarine;
+}
+.grid-item2 {
+	background-color: rgb(255, 221, 127);
+}
+.grid-item3 {
+	background-color: rgb(255, 127, 227);
+}
+.grid {
+	display: grid;
+	grid-template-columns: 100px 1fr 200px;
+}
