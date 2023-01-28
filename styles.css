@@ -44,10 +44,8 @@ repeat(3,1fr) -
 */
 
 .grid {
-
 	/*display: grid - делает из элемента grid контейнер */
-	display:grid
-
+	display: grid;
 
 	/* grid-template-columns: 1fr 2fr 3fr ; */
 	/* grid-template-columns: 30% 200px 20% ; */
