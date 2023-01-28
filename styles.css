@@ -1,11 +1,12 @@
-
-.grid-item{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.grid-item {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 700;
 	text-shadow: 3px 2px 2px black;
 	color: white;
-border-style: dotted;
-border-color: black;
-border-width: 1px}
+	border-style: dotted;
+	border-color: black;
+	border-width: 1px;
+}
 .grid-item1 {
 	background-color: rgba(238, 40, 212, 0.521);
 }
@@ -15,9 +16,49 @@ border-width: 1px}
 .grid-item3 {
 	background-color: rgb(44, 226, 150);
 }
+
+/* grid-template-columns - делает из элемента grid контейнер с указанием ширины колонок.
+grid-template-row - делает из элемента grid контейнер с указанием высоты строк.*/
+/* grid контейнер принимает значения:
+rem
+em
+px
+%
+
+fr -
+ ( фракция) - определяет пропорцию размера элемента относительно дргугих элементов. Например (1fr 2fr 3fr) третий элемент в 3 раза больше первого, а второй элемент в 2 раза больше первого. Все вместе элементы занимают всю ширину контейнера.
+
+min-content-
+ элемент подстраивается под ширину самого длинного слова среди контента
+
+max-content -
+ элемент растягивается на всю ширину контента написанного в одну строку.
+
+minmax(100px,300px) -
+ определяет минимальный и максимальный размер элемента в случае изменения размеров вьюпорта или родителя.
+
+repeat(3,1fr) -
+ создает указанное число элементов заданного размера.
+
+
+*/
+
 .grid {
 	display: grid;
-	grid-template-columns: 100px 1fr 200px;
+	/* grid-template-columns: 1fr 2fr 3fr ; */
+	/* grid-template-columns: 30% 200px 20% ; */
+	/* grid-template-columns: min-content 5rem max-content; */
+	grid-template-columns: 200px 100px minmax(100px, 300px);
+	/* grid-template-columns: repeat(3,1fr); */
+
+	/* По умолчанию */
+	/* grid-template-columns: auto auto auto; */
+
+	/* column-gap - задает зазор между колонками внутри grid контейнера.
+row-gap -задает зазор между строками внутри grid контейнера. */
+	column-gap: 15px;
+
 	border-style: dotted;
-border-width: 1px
+	border-width: 1px;
+	/* width: 600px; */
 }
