@@ -17,8 +17,8 @@
 	background-color: rgb(44, 226, 150);
 }
 
-/* grid-template-columns - делает из элемента grid контейнер с указанием ширины колонок.
-grid-template-row - делает из элемента grid контейнер с указанием высоты строк.*/
+/* grid-template-columns - cоздает макет для грид контейнера с указанием ширины колонок.
+grid-template-row - создает макет для грид контейнера с указанием высоты строк.*/
 /* grid контейнер принимает значения:
 rem
 em
@@ -44,7 +44,11 @@ repeat(3,1fr) -
 */
 
 .grid {
-	display: grid;
+
+	/*display: grid - делает из элемента grid контейнер */
+	display:grid
+
+
 	/* grid-template-columns: 1fr 2fr 3fr ; */
 	/* grid-template-columns: 30% 200px 20% ; */
 	/* grid-template-columns: min-content 5rem max-content; */
