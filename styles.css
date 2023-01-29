@@ -17,9 +17,9 @@ border-width: 1px}
 }
 .grid {
 	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	grid-template-rows:repeat(3,1fr);
+	grid-template-columns: repeat(12,[col]1fr);
+	grid-template-rows:repeat(8,[row]1fr);
 	border-style: dotted;
-
+gap: 15px;
 border-width: 1px
 }
