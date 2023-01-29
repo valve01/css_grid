@@ -17,12 +17,26 @@ border-width: 1px}
 }
 .grid {
 	display: grid;
+
+	/* Создадим макет из 3х строк и 3х столбцов */
 	grid-template-columns: repeat(3,1fr);
 	grid-template-rows: repeat(3,1fr);
+
 	/* column-gap: 15px; */
 	border-style: dotted;
 border-width: 1px
 }
+
+/*
+Грид сетка состоит из нумерованных линий(см. grid_нумерация). Нумерация начинается с верхнего левого угла. Можно начинать нумерация с противоположного угла. В этом случае применяются отрицательные числа (см. grid_обратная нумерация)
+ Для управления положением элемента внутри сетки предназначены следущие свойства: */
+
+ /*
+  grid-column-start - определяет вертикальную линию от которой будет начинаться элемент;
+ grid-column-end - определяет вертикальную линию на которой будет заканчиваться элемент ;
+ grid-row-start - определяет горизонтальную линию от которой будет начинаться элемент ;
+ grid-row-end - определяет горизонтальную линию на которой будет заканчиваться элемент ; */
+
 .grid-item1{
 	grid-column-start: 3 ;
 	grid-column-end: 4 ;
@@ -30,6 +44,7 @@ border-width: 1px
 	grid-row-end: 4 ;
 }
 
+/* Запись ниже полностью эквивалентна записи выше */
 /* .grid-item1{
 	grid-column-start: -2 ;
 	grid-column-end: -1 ;
@@ -37,16 +52,25 @@ border-width: 1px
 	grid-row-end: -1 ;
 } */
 
+
+/* Можно объединить grid-column-start и grid-column-end. Тогда получим grid-column. В нем значения start и end записываются через "/"  Аналогично и для grid-row. */
+
 /* .grid-item1{
 	grid-column: 3/4 ;
 	grid-row: 1/4 ;
 } */
 
+/* Связи между объединенными свойствами на рисунке.
+(см. grid_area_colomn_row) */
+
+/* Можно все 4 свойства объединить в grid-area. */
 /* .grid-item1{
 	grid-area: 1/3/4/4;
 } */
 
+/* Порядок свойств grid-area также строгий и указан ниже. */
 /* .grid-item1{
 	grid-area: grid-row-start/grid-column-start/grid-row-end/grid-column-end;
 }
  */
+
