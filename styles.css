@@ -57,7 +57,10 @@ repeat(3,1fr) -
 	/* grid-template-columns: auto auto auto; */
 
 	/* column-gap - задает зазор между колонками внутри grid контейнера.
-row-gap -задает зазор между строками внутри grid контейнера. */
+row-gap -задает зазор между строками внутри grid контейнера.
+
+gap -задает зазор между колонками и строками внутри grid контейнера.
+*/
 	column-gap: 15px;
 
 	border-style: dotted;
