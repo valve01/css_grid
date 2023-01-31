@@ -1,11 +1,12 @@
-
-.grid-item{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.grid-item {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 700;
 	text-shadow: 3px 2px 2px black;
 	color: white;
-border-style: dotted;
-border-color: black;
-border-width: 1px}
+	border-style: dotted;
+	border-color: black;
+	border-width: 1px;
+}
 .grid-item1 {
 	background-color: rgba(238, 40, 212, 0.521);
 }
@@ -18,10 +19,10 @@ border-width: 1px}
 .grid-item4 {
 	background-color: rgba(238, 40, 212, 0.521);
 }
-
 .grid-item6 {
 	background-color: rgb(44, 226, 150);
-}.grid-item7 {
+}
+.grid-item7 {
 	background-color: rgba(238, 40, 212, 0.521);
 }
 .grid-item8 {
@@ -33,14 +34,61 @@ border-width: 1px}
 .grid-item10 {
 	background-color: rgb(44, 226, 150);
 }
-.grid {
+/* Благодаря вкладыванию одной грид сетки в другую получается независимая внутренняя сетка */
+/* Создадим независимый двухколоночный макет внутри class="grid-item5". */
+
+/* .grid {
 	display: grid;
-	/* grid-template-columns: repeat(3,1fr);
-	grid-template-rows:repeat(3,1fr); */
+	grid-template-columns: repeat(auto-fill, minmax(200px, auto));
 	border-style: dotted;
 	border-width: 1px;
-	height: 100vh;
 	gap: 10px;
 }
 
-/* Благодаря вкладыванию одной грид сетки в другую получается независимая внутренняя сетка */
+.grid-1 {
+	height: 100vh;
+}
+
+.grid-2 {
+	gap: 3px;
+	grid-template-columns: repeat(2, auto);
+} */
+
+
+/* Создадим теперь черырехколоночный макет, который не будет изменяться в своем контейнере */
+/* .grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+	border-style: dotted;
+	border-width: 1px;
+	gap: 10px;
+}
+
+.grid-1 {
+	height: 50vh;
+}
+
+.grid-2 {
+	gap: 3px;
+	grid-template-columns: repeat(4, auto);
+} */
+
+
+/* Выровняем теперь элементы внутри вложенной сетки как нам нужно */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+	border-style: dotted;
+	border-width: 1px;
+	gap: 10px;
+}
+
+.grid-1 {
+	height: 50vh;
+}
+
+.grid-2 {
+	gap: 3px;
+	grid-template-columns: 1fr 5fr;
+}
+.grid-item5{grid-column: span 2;}
