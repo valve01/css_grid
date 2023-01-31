@@ -1,25 +1,58 @@
-
-.grid-item{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.grid-item {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 700;
 	text-shadow: 3px 2px 2px black;
 	color: white;
-border-style: dotted;
-border-color: black;
-border-width: 1px}
+	border-style: dotted;
+	border-color: black;
+	border-width: 1px;
+}
+
+/* Свойства грид элементов */
+
 .grid-item1 {
 	background-color: rgba(238, 40, 212, 0.521);
+
+	/* align-self -выравнивает элемент по вертикальной оси внутри grid контейнера.
+	Принимает значения:
+	stretch - (по умолчанию) - растягивает на элемент по высоте
+	center - выравнивает по центру
+	start - выравнивает элемент по вертикальной оси, помещая его в начало контейнера (вверх)
+	end - выравнивает элемент по вертикальной оси, помещая его в конец контейнера (вниз) */
+	align-self:center ;
+
+	/* justify-self выравнивает элемент по горизонтальной оси внутри grid контейнера.
+	Принимает значения:
+	stretch - (по умолчанию) - растягивает на элемент по ширине
+	center - выравнивает по центру
+	start - выравнивает элемент по горизонтальной оси, помещая его в начало оси контейнера (влево)
+	end - выравнивает элемент по горизонтальной оси, помещая его в конец оси контейнера (вправо) */
+justify-self: center ;
 }
-.grid-item2 {
-	background-color: rgba(228, 47, 47, 0.678);
-}
-.grid-item3 {
-	background-color: rgb(44, 226, 150);
-}
+
+
+/* Свойства грид контейнера */
+
 .grid {
 	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	grid-template-rows:repeat(3,1fr);
+	grid-template-columns: 1fr;
+	grid-template-rows: 300px;
 	border-style: dotted;
+	border-width: 1px;
 
-border-width: 1px
+	/* align-items выравнивает все элементы по вертикали
+	Принимает значения:
+	stretch - (по умолчанию) - растягивает на элемент по высоте
+	center - выравнивает по центру
+	start - выравнивает элемент по вертикальной оси, помещая его в начало контейнера (вверх)
+	end - выравнивает элемент по вертикальной оси, помещая его в конец контейнера (вниз) */
+/* align-items:start ; */
+
+/* justify-items - выравнивает все по горизонтали
+	Принимает значения:
+	stretch - (по умолчанию) - растягивает на элемент по ширине
+	center - выравнивает по центру
+	start - выравнивает элемент по горизонтальной оси, помещая его в начало оси контейнера (влево)
+	end - выравнивает элемент по горизонтальной оси, помещая его в конец оси контейнера (вправо) */
+/* justify-items:end ; */
 }
