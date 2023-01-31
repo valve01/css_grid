@@ -1,12 +1,11 @@
-
-.grid-item{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.grid-item {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 700;
 	text-shadow: 3px 2px 2px black;
 	color: white;
-border-style: dotted;
-border-color: black;
-border-width: 1px;
-
+	border-style: dotted;
+	border-color: black;
+	border-width: 1px;
 }
 .grid-item1 {
 	background-color: rgba(238, 40, 212, 0.521);
@@ -17,13 +16,36 @@ border-width: 1px;
 .grid-item3 {
 	background-color: rgb(44, 226, 150);
 }
+
+/* По умолчанию элементы внутри грид сетки размещаются по порядку (grid-auto-flow:row) сначала слева направо потом сверху вниз. Но мы можем полностью взять под контроль механизм размещения. */
+
 .grid {
 	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	grid-template-rows:repeat(3,1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	border-style: dotted;
+	gap: 10px;
+	border-width: 1px;
+	height: 100vh;
 
-border-width: 1px
+	/* grid-auto-flow - отвечает за алгоритм размещения (применяется только к контейнеру) (схоже с flex-direction во флексбокс).
+Принимает значения:
+row (по умолчанию) - элементы выстраиваются сначала слева направо следующая строка - ниже
+column - элементы выстраиваются сначала сверху вниз следующая строка - правее
+dense - дополнительное значение, может использоваться вместе с row или column, позволяет элементам автоматически занимать свободные пространства в лэйауте несмотря на их порядок в html (не влияет на труктуру DOM)
+
+*/
+	grid-auto-flow: column;
 }
 
-.grid-item:nth-of-type(2) {order: 1;}
+/* код чтобы увидеть как работает dense */
+/* .grid-item:nth-of-type(2),
+.grid-item:nth-of-type(3) {
+	grid-column: span 2;
+.grid{
+	grid-auto-flow: row dense;}
+} */
+
+
+/* order - работает так же как и во флексбокс. По умолчанию 0. При повышении значения смещает в конец перечня элементов (чем больше значение - тем больше его вес). При уменьшении значения смещает в начало перечня элементов (чем больше по модулю отрицательное значение - тем больше его вес) */
+.grid-item:nth-of-type(5){order: 1;}
