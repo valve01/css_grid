@@ -1,4 +1,5 @@
-
+body {margin:0;
+padding: 0;}
 .grid-item{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-weight: 700;
 	text-shadow: 3px 2px 2px black;
@@ -17,9 +18,13 @@ border-width: 1px}
 }
 .grid {
 	display: grid;
-	grid-template-columns: repeat(3,1fr);
-	/* grid-template-rows:repeat(3,1fr); */
+	height: 100vh;
+	gap: 10px;
 	border-style: dotted;
+	border-width: 1px;
 
-border-width: 1px
+
+	/* Значение auto-fill для свойства grid-template-columns автоматически анализирует пустое пространство в лэйауте и в это пространство он будет вставлять следующий элемент. auto-fit делает то же самое, но + растягивает дочерние грид элементы когда они не могут заполнить весь экран. auto-fill не делает этого, т.к. при достижении пустым пространством размеров которые равны размерам элемента auto-fill резервирует это место под следующий элемент.   */
+	grid-template-columns: repeat(auto-fill , minmax(100px,auto));
+	/* grid-template-columns: repeat(auto-fit , minmax(100px,auto)); */
 }
