@@ -5,7 +5,9 @@
 	color: white;
 border-style: dotted;
 border-color: black;
-border-width: 1px}
+border-width: 1px;
+
+}
 .grid-item1 {
 	background-color: rgba(238, 40, 212, 0.521);
 }
@@ -23,3 +25,5 @@ border-width: 1px}
 
 border-width: 1px
 }
+
+.grid-item:nth-of-type(2) {order: 1;}
