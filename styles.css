@@ -24,15 +24,30 @@
 .element-6 {
 	background-color: rgb(39, 41, 40);
 }
+
+/* Создаем макет. Начало */
+
 body {
+	/* 1. Сделаем из body грид контейнер */
 	display: grid;
-	height: 100vh;
-	grid-template-rows: auto 1fr auto;
+
+	/* 2. Зададим размеры колонок */
 	grid-template-columns: minmax(150px, 200px) 1fr minmax(150px, 200px);
+
+	/* 5. Чтобы прибить футор растягиваем сетку на весь вьюпорт */
+	height: 100vh;
+
+	/* 4. С помощью свойства grid-template-areas указываем как должны располагаться в лэйауте названные нами области лэйаута. Очень наглядное свойство. */
 	grid-template-areas:
 		"header header header"
 		"nav main aside"
 		"footer footer footer";
+
+	/*6.При height: 100vh , запись ниже прибьет футор к низу, потому что 1fr заберет все свободное место себе. */
+	grid-template-rows: auto 1fr auto;
+
+	/* 3. Привяжем элементы нашей html разметки (header, nav, aside и т.д.) с помощью свойства grid-area к грид лэйауту.
+		Мы их обзываем для лэйаута (по из названию, но можно и по другому), чтобы можно было обращаться к этим областям грид лэйаута в будущем. И чтобы эти обращения касались конкретного элемента разметки. */
 }
 header {
 	grid-area: header;
@@ -49,8 +64,8 @@ main {
 footer {
 	grid-area: footer;
 }
-
-@media (max-width: 510px) {
+/* При ширине меньше 600рх лэйаут меняется на двухколоночный, aside скрывается, разметка становится как указано в grid-template-areas */
+@media (max-width: 600px) {
 	aside {
 		display: none;
 	}
@@ -62,13 +77,14 @@ footer {
 			"footer footer";
 	}
 }
-@media (max-width: 450px) {
 
+/* При ширине меньше 450рх лэйаут становится одноколоночным,aside скрывается (еще в прошло медиа квери) разметка становится как указано в grid-template-areas  */
+@media (max-width: 450px) {
 	body {
 		grid-template-columns: 1fr;
 		grid-template-areas:
 			"header"
-			"nav" 
+			"nav"
 			"main"
 			"footer";
 	}
